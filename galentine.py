@@ -5,10 +5,7 @@ st.set_page_config(page_title="Galentine's Day 💖", page_icon="💌", layout="
 
 # Light pink background
 page_bg_color = """
-<style>
-[data-testid="stAppViewContainer"] {
-    background-color: #ffe6f2;
-}
+<style>   
 [data-testid="stHeader"] {
     background-color: #ffb3d9;
 }
