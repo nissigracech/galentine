@@ -48,8 +48,7 @@ if st.session_state.step == "force_question":
 
 # Step 3: Main Galentine's Day question
 if st.session_state.step == "main_question":
-    st.title("💖 Happy Galentine's Day! 💖")
-    st.header("On this Galentine's Day, I want to ask you something")
+    st.header("On this Day, I want to ask you something")
     st.subheader("Will you be my Galentine 🥰💌?")
     st.image("gal.jpg", width=300)
 
@@ -86,11 +85,11 @@ if st.session_state.step == "main_question":
 
 # Step 4: Special Letter after "Yes"
 if st.session_state.step == "letter":
-    st.subheader("A Special Letter Just for You 💌")
+    st.title("💖 Happy Galentine's Day! 💖") 
     st.write(
-        "Dear Bestie, 💖\n\n"
+        "Dear B,\n\n"
         "On this beautiful Galentine's Day, I just want to remind you how amazing you are! "
-        "You're my greatest friend, my partner-in-crime, and someone who makes life so much brighter. "
+        "You're my greatest friend, and someone who makes life so much brighter just by existing. "
         "Thank you for always being there, for laughing with me, and for being such a wonderful soul. 💕\n\n"
         "Let's celebrate our friendship today and always! 🥂✨\n\n"
         "With love,\n"
