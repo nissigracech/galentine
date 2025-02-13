@@ -33,7 +33,7 @@ with col1:
     if st.button("💝 Yes, bestie! 💝"):
         st.balloons()
         st.success("Yay! You're my Galentine forever! 💕✨")
-        st.image("https://media.giphy.com/media/l41lTnA4Lohw5hO2U/giphy.gif")
+        st.image("http://static1.squarespace.com/static/5bb143b5e5f7d140b41f19a5/5c059a23032be416404f126c/65cbd3f71bd5a2703b12866d/1707857520845/w4Ab1TDWnD60pVIxnlXWfP6TiW5TXun27-TgAk-cW5IgVxobTnw94SDesg1fi7u7Op09OcqVl0hBMKR2xkZvU1TdGCXlkpY4_uu1dyEEjQaXPtskt1F_IloUuHS6.jpg?format=1500w")
 
 with col2:
     if st.button("🤔 Let me think... 🤔"):
