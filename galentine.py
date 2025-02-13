@@ -44,7 +44,7 @@ if st.session_state.step == "ask_permission":
 if st.session_state.step == "force_question":
     st.subheader("How dare you stop me from asking? 😤 Anyway, I'll ask what I want! 😂")
     st.session_state.step = "main_question"
-    st.rerun()
+    
 
 # Step 3: Main Galentine's Day question
 if st.session_state.step == "main_question":
