@@ -42,7 +42,7 @@ if not st.session_state.declined:
     with col2:
         if st.button("🤔 No 🤔"):
             st.session_state.declined = True
-            st.experimental_rerun()
+            st.rerun()
 else:
     st.subheader("You have no other choice than saying YES! 😜💖")
     if st.button("💝 Okay, yes! 💝"):
