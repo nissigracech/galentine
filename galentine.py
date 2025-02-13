@@ -32,8 +32,6 @@ if 'declined' not in st.session_state:
     st.session_state.declined = False
 if 'accepted' not in st.session_state:
     st.session_state.accepted = False
-if 'button_pos' not in st.session_state:
-    st.session_state.button_pos = (0, 0)
 
 col1, col2 = st.columns([1, 2])  # col2 is empty
 with col1:
@@ -47,34 +45,33 @@ with col1:
                 st.success("Yay! You're my Galentine forever! 💕✨")
 
         with sub_col2:
-            button_label = "No😒, I can't"
-            if st.button(button_label, key="no_button"):
+            if st.button("No😒, I can't"):
                 st.session_state.declined = True
                 st.rerun()
-            else:
-                # Randomize button position when hovered
-                st.session_state.button_pos = (random.randint(50, 300), random.randint(50, 300))
-            
-            st.markdown(
-                f"""
-                <style>
-                div[data-testid="stButton"] button {{
-                    position: relative;
-                    left: {st.session_state.button_pos[0]}px;
-                    top: {st.session_state.button_pos[1]}px;
-                }}
-                </style>
-                """,
-                unsafe_allow_html=True
-            )
 
 if st.session_state.declined:
     st.subheader("You can't escape! Think again! 😜💖")
     sub_col1, sub_col2 = st.columns(2)
     with sub_col1:
-        if st.button("😒 No 😒"):
+        if st.button("😒 No 😒", key="no_button"):
+            # Move button to a random position
+            st.session_state.declined = True
             st.rerun()
     with sub_col2:
         if st.button("🤔 Think Again 🤔"):
             st.session_state.declined = False
             st.rerun()
+
+    # Apply random positioning for "No" button
+    st.markdown(
+        f"""
+        <style>
+        div[data-testid="stButton"]:nth-of-type(1) button {{
+            position: absolute;
+            left: {random.randint(50, 300)}px;
+            top: {random.randint(50, 300)}px;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
