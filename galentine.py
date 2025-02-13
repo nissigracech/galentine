@@ -96,4 +96,4 @@ if st.session_state.step == "letter":
         "With love,\n"
         "Your Favorite Person 😉"
     )
-    st.image("th (2).jpg", width=400)
+    st.image("th (2).jpeg", width=400)
