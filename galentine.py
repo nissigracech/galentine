@@ -87,7 +87,7 @@ if st.session_state.step == "main_question":
 if st.session_state.step == "letter":
     st.title("💖 Happy Galentine's Day! 💖") 
     st.write(
-        "Dear B,\n\n"
+        "Dear frndduuu,\n\n"
         "On this beautiful Galentine's Day, I just want to remind you how amazing you are! "
         "You're my greatest friend, and someone who makes life so much brighter just by existing. "
         "Thank you for always being there, for laughing with me, and for being such a wonderful soul. 💕\n\n"
