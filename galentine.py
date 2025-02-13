@@ -39,7 +39,7 @@ if not st.session_state.accepted:
                 st.session_state.accepted = True
                 st.balloons()
                 st.success("Yay! You're my Galentine forever! 💕✨") 
-                st.rerun()
+                
 
         with col2:
             if st.button("No😒, I can't"):
