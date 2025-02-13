@@ -25,34 +25,25 @@ st.header("On this Galentine's Day, I want to ask you something")
 st.subheader("Will you be my Galentine 🥰💌?")
 st.image("gal.jpg", width=300)  # Adjusted image size
 
-# Session state to handle button clicks
+# Session state initialization
 if 'declined' not in st.session_state:
     st.session_state.declined = False
 if 'accepted' not in st.session_state:
     st.session_state.accepted = False
 
-# Buttons
-yes_button = st.button("Yes🥹🥹, I will")
-no_button = st.button("No😒, I can't")
-
-# Handling button clicks
-if yes_button:
+# If "Yes" is clicked
+if st.button("Yes🥹🥹, I will"):
     st.session_state.accepted = True
+    st.session_state.declined = False
     st.balloons()
-    st.success("Yay! You're my Galentine forever! 💕✨")
 
-if no_button:
+# If "No" is clicked
+if st.button("No😒, I can't"):
     st.session_state.declined = True
 
-# Loop if "No" is clicked
-while st.session_state.declined and not st.session_state.accepted:
+# Show message if "No" was clicked
+if st.session_state.declined and not st.session_state.accepted:
     st.subheader("You can't escape! Think again! 😜💖")
-    
-    no_again = st.button("😒 No 😒")
-    think_again = st.button("🤔 Think Again 🤔")
 
-    if think_again:
+    if st.button("🤔 Think Again 🤔"):
         st.session_state.declined = False
-
-    if no_again:
-        st.session_state.declined = True  # Keeps looping
