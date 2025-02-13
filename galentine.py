@@ -31,44 +31,37 @@ if 'declined' not in st.session_state:
 if 'accepted' not in st.session_state:
     st.session_state.accepted = False
 
-# Create two main columns
-col1, col2 = st.columns([1, 1])  # col1 for buttons, col2 empty
-
-# Place buttons inside sub-columns within col1
-with col1:
-    sub_col1, sub_col2 = st.columns(2)
-
-    # "Yes" button
-    with sub_col1:
-        if st.button("Yes🥹🥹, I will", key="yes"):
-            st.session_state.accepted = True
-            st.session_state.declined = False
-            st.balloons()
-
-    # "No" button
-    with sub_col2:
-        if st.button("No😒, I can't", key="no"):
-            st.session_state.declined = True
-            st.session_state.accepted = False  # Ensure no conflict
-
-# col2 is intentionally left empty
-
-# Show success message if "Yes" is clicked
-if st.session_state.accepted:
-    st.success("Yay! You're my Galentine forever! 💕✨")  
-
-# Show "Think Again" prompt if "No" is clicked
-if st.session_state.declined and not st.session_state.accepted:
-    st.subheader("You can't escape! Think again! 😜💖")
-
+if not st.session_state.accepted and not st.session_state.declined:
+    # First set of buttons (shown initially)
+    col1, col2 = st.columns([1, 1])  # col1 for buttons, col2 empty
     with col1:
         sub_col1, sub_col2 = st.columns(2)
+        with sub_col1:
+            if st.button("Yes🥹🥹, I will", key="yes"):
+                st.session_state.accepted = True
+                st.session_state.declined = False
+                st.balloons()
+        with sub_col2:
+            if st.button("No😒, I can't", key="no"):
+                st.session_state.declined = True
+                st.session_state.accepted = False
+                st.rerun()
 
+if st.session_state.accepted:
+    st.success("Yay! You're my Galentine forever! 💕✨")
+
+if st.session_state.declined and not st.session_state.accepted:
+    # Show "You can't escape!" message first
+    st.subheader("You can't escape! Think again! 😜💖")
+
+    # Second set of buttons (after clicking "No")
+    col1, col2 = st.columns([1, 1])  # Same layout
+    with col1:
+        sub_col1, sub_col2 = st.columns(2)
         with sub_col1:
             if st.button("😒 No 😒", key="no_again"):
-                st.rerun()  # Forces rerun without resetting session state
-
+                st.rerun()
         with sub_col2:
             if st.button("🤔 Think Again 🤔", key="think_again"):
-                st.session_state.declined = False  # Reset declined
+                st.session_state.declined = False
                 st.rerun()
