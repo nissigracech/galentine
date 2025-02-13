@@ -26,7 +26,7 @@ if 'accepted' not in st.session_state:
     st.session_state.accepted = False
 
 if st.session_state.accepted:
-    st.image("special.jpg", width=300)  # Replace with your special image
+    st.image("th.jpeg", width=300)  # Replace with your special image
     st.markdown("""
     # 💌 My Dearest Galentine 💌
     
