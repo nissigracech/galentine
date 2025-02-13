@@ -26,7 +26,7 @@ st.markdown(page_bg_color, unsafe_allow_html=True)
 st.title("💖 Happy Galentine's Day! 💖")
 st.write("on this galentine's day, I want to ask you something")
 st.subheader("Will you be my Galentine forever? 🥰💌")
-
+st.image("gal.jpg")
 # Session state to handle button clicks
 if 'declined' not in st.session_state:
     st.session_state.declined = False
@@ -38,7 +38,7 @@ if not st.session_state.accepted:
         col1, col2 = st.columns(2)
 
         with col1:
-            if st.button("💝 Yes, bestie! 💝"):
+            if st.button("Yes🥹🥹, I will"):
                 st.session_state.accepted = True
                 st.balloons()
                 st.success("Yay! You're my Galentine forever! 💕✨")
@@ -46,7 +46,7 @@ if not st.session_state.accepted:
                 st.rerun()
 
         with col2:
-            if st.button("🤔 No 🤔"):
+            if st.button("No😒, I can't"):
                 st.session_state.declined = True
                 st.rerun()
     else:
