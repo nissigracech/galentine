@@ -15,21 +15,15 @@ page_bg_color = """
     border-radius: 15px;
     font-size: 20px;
 }
-img {
-    width: 50%;
-    display: block;
-    margin: auto;
-}
 </style>
 """
 st.markdown(page_bg_color, unsafe_allow_html=True)
 
 # Title & message
 st.title("💖 Happy Galentine's Day! 💖")
-st.write("On this Galentine's Day, I want to ask you something")
+st.write("on this galentine's day, I want to ask you something")
 st.subheader("Will you be my Galentine forever? 🥰💌")
-st.markdown("<img src='gal.jpg' style='width:50%;'>", unsafe_allow_html=True)
-
+st.image("gal.jpg")
 # Session state to handle button clicks
 if 'declined' not in st.session_state:
     st.session_state.declined = False
