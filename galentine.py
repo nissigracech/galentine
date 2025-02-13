@@ -21,8 +21,8 @@ st.markdown(page_bg_color, unsafe_allow_html=True)
 
 # Title & message
 st.title("💖 Happy Galentine's Day! 💖")
-st.write("on this galentine's day, I want to ask you something")
-st.subheader("Will you be my Galentine forever? 🥰💌")
+st.header("on this galentine's day, I want to ask you something")
+st.subheader("Will you be my Galentine 🥰💌?")
 st.image("gal.jpg")
 # Session state to handle button clicks
 if 'declined' not in st.session_state:
